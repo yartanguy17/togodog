@@ -103,23 +103,23 @@
                 <div class="aside">
                     <h3 class="aside-title">Filter by Gender</h3>
                     <ul class="list-links">
-                        <li class="active"><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
+                        <li class="active"><a href="#">Mâle</a></li>
+                        <li><a href="#">Femelle</a></li>
                     </ul>
                 </div>
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
                 <div class="aside">
-                    <h3 class="aside-title">Top Rated Product</h3>
+                    <h3 class="aside-title">Produit le mieux noté</h3>
                     <!-- widget product -->
                     <div class="product product-widget">
                         <div class="product-thumb">
-                            <img src="./img/thumb-product01.jpg" alt="">
+                            <img src="{{ asset('website/assets/img/product/7.jpeg') }}" alt="">
                         </div>
                         <div class="product-body">
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                            {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                            <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
                             <div class="product-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -134,11 +134,11 @@
                     <!-- widget product -->
                     <div class="product product-widget">
                         <div class="product-thumb">
-                            <img src="./img/thumb-product01.jpg" alt="">
+                            <img src="{{ asset('website/assets/img/product/8.jpeg') }}" alt="">
                         </div>
                         <div class="product-body">
                             <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <h3 class="product-price">$32.50</h3>
+                            {{-- <h3 class="product-price">$32.50</h3> --}}
                             <div class="product-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -203,13 +203,13 @@
                                 <div class="product-thumb">
                                     <div class="product-label">
                                         <span>New</span>
-                                        <span class="sale">-20%</span>
+                                        {{-- <span class="sale">-20%</span> --}}
                                     </div>
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product/.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/8.jpeg') }}" alt="" height="200px;">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                                    {{-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -217,7 +217,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -233,10 +233,10 @@
                             <div class="product product-single">
                                 <div class="product-thumb">
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product02.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/9.jpeg') }}" alt="" height="200px;">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
+                                    {{-- <h3 class="product-price">$32.50</h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -244,7 +244,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -263,13 +263,13 @@
                                 <div class="product-thumb">
                                     <div class="product-label">
                                         <span>New</span>
-                                        <span class="sale">-20%</span>
+                                        {{-- <span class="sale">-20%</span> --}}
                                     </div>
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product03.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/12.jpeg') }}" alt="" >
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                                    {{-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -277,7 +277,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -298,10 +298,10 @@
                                         <span>New</span>
                                     </div>
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product04.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/14.jpeg') }}" alt="" height="230px;">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
+                                    {{-- <h3 class="product-price">$32.50</h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -309,7 +309,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -330,10 +330,10 @@
                                         <span>New</span>
                                     </div>
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product05.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/19.jpeg') }}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
+                                    {{-- <h3 class="product-price">$32.50</h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -341,7 +341,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -350,21 +350,17 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Product Single -->
-
-                        <!-- Product Single -->
                         <div class="col-md-4 col-sm-6 col-xs-6">
                             <div class="product product-single">
                                 <div class="product-thumb">
                                     <div class="product-label">
                                         <span>New</span>
-                                        <span class="sale">-20%</span>
                                     </div>
                                     <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product06.jpg" alt="">
+                                    <img src="{{ asset('website/assets/img/product/10.jpeg') }}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                                    {{-- <h3 class="product-price">$32.50</h3> --}}
                                     <div class="product-rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -372,7 +368,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o empty"></i>
                                     </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2> --}}
                                     <div class="product-btns">
                                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -381,106 +377,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Product Single -->
 
-                        <div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>
-
-                        <!-- Product Single -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>New</span>
-                                        <span class="sale">-20%</span>
-                                    </div>
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product07.jpg" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-                                    </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Product Single -->
-
-                        <!-- Product Single -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product08.jpg" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-                                    </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Product Single -->
-
-                        <div class="clearfix visible-sm visible-xs"></div>
-
-                        <!-- Product Single -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span class="sale">-20%</span>
-                                    </div>
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product01.jpg" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-                                    </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Product Single -->
                     </div>
                     <!-- /row -->
                 </div>
                 <!-- /STORE -->
 
                 <!-- store bottom filter -->
-                <div class="store-filter clearfix">
+                {{-- <div class="store-filter clearfix">
                     <div class="pull-left">
                         <div class="row-filter">
                             <a href="#"><i class="fa fa-th-large"></i></a>
@@ -513,7 +417,7 @@
                             <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /store bottom filter -->
             </div>
             <!-- /MAIN -->

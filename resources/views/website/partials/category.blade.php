@@ -203,9 +203,9 @@
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
                     <li><a href="{{ route('home') }}">Accueil</a></li>
-                    <li><a href="{{ route('shop') }}">Salon de toilettage</a></li>
+                    <li><a href="#">Salon de toilettage</a></li>
                     <li><a href="{{ route('shop') }}">Boutique</a></li>
-                    <li><a href="{{ route('shop') }}">Alimentation</a></li>
+                    <li><a href="{{ route('alimentation') }}">Alimentation</a></li>
                     {{-- <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Chiots Mâle <i class="fa fa-caret-down"></i></a>
                         <div class="custom-menu">
                             <div class="row">
