@@ -26,7 +26,7 @@
         <div class="pull-right">
             <ul class="header-btns">
                 <!-- Account -->
-                <li class="header-account dropdown default-dropdown">
+                {{-- <li class="header-account dropdown default-dropdown">
                     <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                         <div class="header-btns-icon">
                             <i class="fa fa-user-o"></i>
@@ -34,15 +34,15 @@
                         <strong class="text-uppercase">Mon compte <i class="fa fa-caret-down"></i></strong>
                     </div>
                     <a href="#" class="text-uppercase">Connexion</a> / <a href="#" class="text-uppercase">Join</a>
-                    <ul class="custom-menu">
+                     <ul class="custom-menu">
                         <li><a href="#"><i class="fa fa-user-o"></i> Mon compte</a></li>
                         <li><a href="#"><i class="fa fa-heart-o"></i>Reservation</a></li>
-                        {{-- <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li> --}}
+                        <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
                         <li><a href="#"><i class="fa fa-check"></i> Commande</a></li>
                         <li><a href="#"><i class="fa fa-unlock-alt"></i>Connexion</a></li>
                         <li><a href="#"><i class="fa fa-user-plus"></i> Inscription</a></li>
                     </ul>
-                </li>
+                </li> 0lo8r2PGA* --}}
                 <!-- /Account -->
 
                 <!-- Cart -->
@@ -56,7 +56,7 @@
                         <br>
                         <span>35.20$</span>
                     </a>
-                    <div class="custom-menu">
+                    {{-- <div class="custom-menu">
                         <div id="shopping-cart">
                             <div class="shopping-cart-list">
                                 <div class="product product-widget">
@@ -85,7 +85,7 @@
                                 <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </li>
                 <!-- /Cart -->
 

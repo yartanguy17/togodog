@@ -13,7 +13,9 @@ class CategoryController extends Controller
 {
     public function index(){
 
-        return view('admin.category.index');
+        $categorys=Category::where('status',1)->get();
+
+        return view('admin.category.index',compact('categorys'));
 
 
     }
@@ -28,7 +30,7 @@ class CategoryController extends Controller
         return view('admin.category.create');
 
     }
-    public function save(){
+    public function save(Request $request){
 
         // return view('admin.category.create');
 
@@ -49,7 +51,7 @@ class CategoryController extends Controller
         $categorie = new Category();
         $categorie->title = $request->input('categorie_name');
         $categorie->status = $request->input('status');
-        $categorie->added_by = Auth()->user()->id;
+        $categorie->added_by = 1;
 
 
         if ($validator->fails()) {

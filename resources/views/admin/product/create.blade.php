@@ -9,12 +9,16 @@
         <div class="card">
             <h5 class="card-header">Ajouter un article</h5>
             <div class="card-body">
-                <form>
+                <form method="POST" action="{{ route('saveproduct') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="inputPassword">Catégorie <span class="text-danger">*</span></label>
-                        <select class="form-control">
+                        <select class="form-control" name="cat_id">
                            <option>Selectionner</option>
-                           <option value="" name="cat_id"></option>
+                           @foreach ($categorys as $category)
+                           <option value="{{ $category->id }}" >{{ $category->title }}</option>
+                           @endforeach
+
 
                         </select>
                     </div>
@@ -27,8 +31,11 @@
                        <input id="inputText4" type="number" class="form-control" placeholder="Prix" name="price">
                    </div>
                     <div class="form-group">
-                        <label for="inputEmail">Description</label>
-                        <input id="inputEmail" type="text" placeholder="Description" class="form-control">
+                        <label for="inputEmail">Description</label> <span class="text-danger">*</span>
+                        <textarea type="text" class="form-control" name="summary">
+
+                        </textarea>
+
 
                     </div>
                     <div class="custom-file mb-3">
@@ -38,11 +45,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword">Status</label>
-                        <select class="form-control">
+                        <label for="inputPassword">Status</label> <span class="text-danger">*</span>
+                        <select class="form-control" name="status">
                            <option>Selectionner</option>
-                           <option value="1">Activé</option>
-                           <option value="0">Désactivé</option>
+                           <option value="active">Active</option>
+                           <option value="inactive">Inactive</option>
                         </select>
                     </div>
 

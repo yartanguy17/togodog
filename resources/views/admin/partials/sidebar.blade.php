@@ -15,6 +15,20 @@
                         <div id="submenu-1" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-4-1">Bannier</a>
+                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('create.banner') }}">Ajouter</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('banner') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des bannier</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2"><i class="m-r-10 mdi mdi-account-multiple"></i>Clients</a>
                                     <div id="submenu-1-2" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
@@ -35,8 +49,8 @@
                                     <a class="nav-link" href="dashboard-sales.html">Sales</a>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Catègories</a>
-                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-6" aria-controls="submenu-1-1">Catègories</a>
+                                    <div id="submenu-1-6" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('addcategory') }}">Ajouter</a>
@@ -49,8 +63,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Sous-catègories</a>
-                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-7" aria-controls="submenu-1-7">Sous-catègories</a>
+                                    <div id="submenu-1-7" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('addsubcategory') }}">Ajouter</a>
@@ -83,7 +97,7 @@
                                     <div id="submenu-1-3" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="dashboard-influencer.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des reservation</a>
+                                                <a class="nav-link" href="{{ route('reservation') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des reservation</a>
                                             </li>
 
                                         </ul>
@@ -114,8 +128,8 @@
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Bannier</a>
-                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4-1" aria-controls="submenu-4-1">Bannier</a>
+                                    <div id="submenu-4-1" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="dashboard-influencer.html">Ajouter</a>

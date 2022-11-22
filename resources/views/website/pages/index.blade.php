@@ -1,466 +1,314 @@
 @extends('website.layout.app')
 
 @section('content')
+    <!-- HOME -->
+    <div id="home">
+        <!-- container -->
+        <div class="container">
+            <!-- home wrap -->
+            <div class="home-wrap">
+                <!-- home slick -->
+                <div id="home-slick">
 
-
-	<!-- HOME -->
-	<div id="home">
-		<!-- container -->
-		<div class="container">
-			<!-- home wrap -->
-			<div class="home-wrap">
-				<!-- home slick -->
-				<div id="home-slick">
-					<!-- banner -->
-					<div class="banner banner-1">
-						<img src="{{ asset('website/assets/img/banner_02.jpg') }}" alt="">
-						<div class="banner-caption text-center">
-							{{-- <h1>Bags sale</h1>
+                    @foreach ($banners as $banner)
+                        <!-- banner -->
+                        <div class="banner banner-1">
+                            <img src="{{ asset('storage/banner/' . $banner->photo) }}" alt="">
+                            <div class="banner-caption text-center">
+                                {{-- <h1>Bags sale</h1>
 							<h3 class="white-color font-weak">Up to 50% Discount</h3>
 							<button class="primary-btn">Shop Now</button> --}}
-						</div>
-					</div>
-					<!-- /banner -->
+                            </div>
+                        </div>
+                        <!-- /banner -->
+                    @endforeach
 
-					<!-- banner -->
-					<div class="banner banner-1">
-						<img src="{{ asset('website/assets/img/banner00.jpg') }}" alt="">
-						<div class="banner-caption">
-							{{-- <h1 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span></h1>
-							<button class="primary-btn">Shop Now</button> --}}
-						</div>
-					</div>
-					<!-- /banner -->
+                </div>
+                <!-- /home slick -->
+            </div>
+            <!-- /home wrap -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /HOME -->
 
-					<!-- banner -->
-					<div class="banner banner-1">
-						<img src="{{ asset('website/assets/img/banner_000.jpg') }}" alt="">
-						<div class="banner-caption">
-							{{-- <h1 class="white-color">New Product <span>Collection</span></h1>
-							<button class="primary-btn">Shop Now</button> --}}
-						</div>
-					</div>
-					<!-- /banner -->
-					<!-- banner -->
-					<div class="banner banner-1">
-						<img src="{{ asset('website/assets/img/banner/chiot1.jpg') }}" alt="">
-						<div class="banner-caption">
-							{{-- <h1 class="white-color">New Product <span>Collection</span></h1>
-							<button class="primary-btn">Shop Now</button> --}}
-						</div>
-					</div>
-					<div class="banner banner-1">
-						<img src="{{ asset('website/assets/img/banner/1.jpg') }}" alt="">
-						<div class="banner-caption">
-							{{-- <h1 class="white-color">New Product <span>Collection</span></h1>
-							<button class="primary-btn">Shop Now</button> --}}
-						</div>
-					</div>
-					<!-- /banner -->
-				</div>
-				<!-- /home slick -->
-			</div>
-			<!-- /home wrap -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /HOME -->
 
-	<!-- section -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- banner -->
-				<div class="col-md-4 col-sm-6">
-					<a class="banner banner-1" href="#">
-						<img src="{{ asset('website/assets/img/banner/chiot2.jpg') }}" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color"></h2>
-						</div>
-					</a>
-				</div>
-				<!-- /banner -->
 
-				<!-- banner -->
-				<div class="col-md-4 col-sm-6">
-					<a class="banner banner-1" href="#">
-						<img src="{{ asset('website/assets/img/banner/chiot6.jpg') }}" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color"></h2>
-						</div>
-					</a>
-				</div>
-				<!-- /banner -->
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- section-title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2 class="title">En reservation</h2>
+                        <div class="pull-right">
+                            <div class="product-slick-dots-1 custom-dots"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /section-title -->
 
-				<!-- banner -->
-				<div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
-					<a class="banner banner-1" href="#">
-						<img src="{{ asset('website/assets/img/banner/chiot4.jpg') }}" alt="">
-						<div class="banner-caption text-center">
-							<h2 class="white-color"></h2>
-						</div>
-					</a>
-				</div>
-				<!-- /banner -->
+                <!-- banner -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="banner banner-2">
+                        <img src="{{ asset('website/assets/img/banner/1.jpg') }}" alt="">
+                        <div class="banner-caption">
+                            <h2 class="white-color"><br></h2>
+                            <button class="primary-btn">Reserver</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /banner -->
 
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
+                <!-- Product Slick -->
+                <div class="col-md-9 col-sm-6 col-xs-6">
+                    <div class="row">
+                        <div id="product-slick-1" class="product-slick">
 
-	<!-- section -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- section-title -->
-				<div class="col-md-12">
-					<div class="section-title">
-						<h2 class="title">En reservation</h2>
-						<div class="pull-right">
-							<div class="product-slick-dots-1 custom-dots"></div>
-						</div>
-					</div>
-				</div>
-				<!-- /section-title -->
+                            @foreach ($product_lasts as $product_last)
+                                <!-- Product Single -->
+                                @php
+                                    $photo = explode(';', $product_last->photo);
+                                @endphp
+                                <a href="{{ route('product-detail',Crypt::encrypt($product_last->id)) }}">
+                                    <div class="product product-single">
+                                        <div class="product-thumb">
+                                            <div class="product-label">
+                                                <span>New</span>
+                                                {{-- <span class="sale">-20%</span> --}}
+                                            </div>
+                                            <ul class="product-countdown">
+                                                {{-- <li><span>00 H</span></li>
+                                            <li><span>00 M</span></li>
+                                            <li><span>00 S</span></li> --}}
+                                            </ul>
+                                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i>Voir</button>
+                                            <img src="{{ asset('photos/produits/' . $photo[0]) }}" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            {{-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
+                                            <h3 class="product-price">{{ $product_last->price }} XOF</h3>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o empty"></i>
+                                            </div>
+                                            <h2 class="product-name"><a href="#">{{ $product_last->title }}</a></h2>
+                                            <div class="product-btns">
+                                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i>
+                                                    Ajouter au panier</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
 
-				<!-- banner -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="banner banner-2">
-						<img src="{{ asset('website/assets/img/banner/1.jpg') }}" alt="">
-						<div class="banner-caption">
-							<h2 class="white-color"><br></h2>
-							<button class="primary-btn">Reserver</button>
-						</div>
-					</div>
-				</div>
-				<!-- /banner -->
+                                <!-- /Product Single -->
+                            @endforeach
 
-				<!-- Product Slick -->
-				<div class="col-md-9 col-sm-6 col-xs-6">
-					<div class="row">
-						<div id="product-slick-1" class="product-slick">
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span>New</span>
-										<span class="sale">-20%</span>
-									</div>
-									<ul class="product-countdown">
-										{{-- <li><span>00 H</span></li>
-										<li><span>00 M</span></li>
-										<li><span>00 S</span></li> --}}
-									</ul>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot7.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
 
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span class="sale">-20%</span>
-									</div>
-									<ul class="product-countdown">
-										{{-- <li><span>00 H</span></li>
-										<li><span>00 M</span></li>
-										<li><span>00 S</span></li> --}}
-									</ul>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot8.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
 
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span>New</span>
-										<span class="sale">-20%</span>
-									</div>
-									<ul class="product-countdown">
-										{{-- <li><span>00 H</span></li>
-										<li><span>00 M</span></li>
-										<li><span>00 S</span></li> --}}
-									</ul>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot10.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Slick -->
+            </div>
+            <!-- /row -->
 
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span>New</span>
-										<span class="sale">-20%</span>
-									</div>
-									<ul class="product-countdown">
-										{{-- <li><span>00 H</span></li>
-										<li><span>00 M</span></li>
-										<li><span>00 S</span></li> --}}
-									</ul>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot12.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-						</div>
-					</div>
-				</div>
-				<!-- /Product Slick -->
-			</div>
-			<!-- /row -->
+            <!-- row -->
+            <div class="row">
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2 class="title">Votre Choix</h2>
+                        <div class="pull-right">
+                            <div class="product-slick-dots-2 custom-dots">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section title -->
 
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				<div class="col-md-12">
-					<div class="section-title">
-						<h2 class="title">Votre Choix</h2>
-						<div class="pull-right">
-							<div class="product-slick-dots-2 custom-dots">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- section title -->
-
-				<!-- Product Single -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="product product-single product-hot">
-						<div class="product-thumb">
-							<div class="product-label">
-								<span class="sale">-20%</span>
-							</div>
-							{{-- <ul class="product-countdown">
+                <!-- Product Single -->
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="product product-single product-hot">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span class="sale">-20%</span>
+                            </div>
+                            {{-- <ul class="product-countdown">
 								<li><span>00 H</span></li>
 								<li><span>00 M</span></li>
 								<li><span>00 S</span></li>
 							</ul> --}}
-							<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-							<img src="{{ asset('website/assets/img/banner/3.jpg') }}" alt="">
-						</div>
-						<div class="product-body">
-							<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-							<div class="product-rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-o empty"></i>
-							</div>
-							<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-							<div class="product-btns">
-								<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-								<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-								<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Product Single -->
+                            <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
+                            <img src="{{ asset('website/assets/img/banner/3.jpg') }}" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o empty"></i>
+                            </div>
+                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                            <div class="product-btns">
+                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Single -->
 
-				<!-- Product Slick -->
-				<div class="col-md-9 col-sm-6 col-xs-6">
-					<div class="row">
-						<div id="product-slick-2" class="product-slick">
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot13.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50</h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
+                <!-- Product Slick -->
+                <div class="col-md-9 col-sm-6 col-xs-6">
+                    <div class="row">
+                        <div id="product-slick-2" class="product-slick">
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick
+                                        view</button>
+                                    <img src="{{ asset('website/assets/img/banner/chiot13.jpg') }}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50</h3>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o empty"></i>
+                                    </div>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
 
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span class="sale">-20%</span>
-									</div>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot14.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                        <span class="sale">-20%</span>
+                                    </div>
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick
+                                        view</button>
+                                    <img src="{{ asset('website/assets/img/banner/chiot14.jpg') }}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o empty"></i>
+                                    </div>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
 
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot6.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50</h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick
+                                        view</button>
+                                    <img src="{{ asset('website/assets/img/banner/chiot6.jpg') }}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50</h3>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o empty"></i>
+                                    </div>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
 
-							<!-- Product Single -->
-							<div class="product product-single">
-								<div class="product-thumb">
-									<div class="product-label">
-										<span>New</span>
-										<span class="sale">-20%</span>
-									</div>
-									<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-									<img src="{{ asset('website/assets/img/banner/chiot5.jpg') }}" alt="">
-								</div>
-								<div class="product-body">
-									<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-									</div>
-									<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-									<div class="product-btns">
-										<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-										<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-										<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
+                            <!-- Product Single -->
+                            <div class="product product-single">
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                        <span>New</span>
+                                        <span class="sale">-20%</span>
+                                    </div>
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick
+                                        view</button>
+                                    <img src="{{ asset('website/assets/img/banner/chiot5.jpg') }}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o empty"></i>
+                                    </div>
+                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                    <div class="product-btns">
+                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
 
-						</div>
-					</div>
-				</div>
-				<!-- /Product Slick -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
 
-	<!-- section -->
-	<div class="section section-grey">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- banner -->
-				{{-- <div class="col-md-8">
+    <!-- section -->
+    <div class="section section-grey">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- banner -->
+                {{-- <div class="col-md-8">
 					<div class="banner banner-1">
 						<img src="{{ asset('website/assets/img/banner13.jpg') }}" alt="">
 						<div class="banner-caption text-center">
@@ -469,10 +317,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /banner -->
+                <!-- /banner -->
 
-				<!-- banner -->
-				{{-- <div class="col-md-4 col-sm-6">
+                <!-- banner -->
+                {{-- <div class="col-md-4 col-sm-6">
 					<a class="banner banner-1" href="#">
 						<img src="{{ asset('website/assets/img/banner11.jpg') }}" alt="">
 						<div class="banner-caption text-center">
@@ -480,10 +328,10 @@
 						</div>
 					</a>
 				</div> --}}
-				<!-- /banner -->
+                <!-- /banner -->
 
-				<!-- banner -->
-				{{-- <div class="col-md-4 col-sm-6">
+                <!-- banner -->
+                {{-- <div class="col-md-4 col-sm-6">
 					<a class="banner banner-1" href="#">
 						<img src="{{ asset('website/assets/img/banner12.jpg') }}" alt="">
 						<div class="banner-caption text-center">
@@ -491,30 +339,30 @@
 						</div>
 					</a>
 				</div> --}}
-				<!-- /banner -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
+                <!-- /banner -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
 
-	<!-- section -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				<div class="col-md-12">
-					<div class="section-title">
-						<h2 class="title">Latest Products</h2>
-					</div>
-				</div>
-				<!-- section title -->
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2 class="title">Latest Products</h2>
+                    </div>
+                </div>
+                <!-- section title -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
@@ -538,10 +386,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -569,10 +417,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -600,10 +448,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -630,14 +478,14 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
-			</div>
-			<!-- /row -->
+                <!-- /Product Single -->
+            </div>
+            <!-- /row -->
 
-			<!-- row -->
-			<div class="row">
-				<!-- banner -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+            <!-- row -->
+            <div class="row">
+                <!-- banner -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="banner banner-2">
 						<img src="{{ asset('website/assets/img/banner15.jpg') }}" alt="">
 						<div class="banner-caption">
@@ -646,10 +494,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /banner -->
+                <!-- /banner -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -677,10 +525,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -708,10 +556,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -739,22 +587,22 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
-			</div>
-			<!-- /row -->
+                <!-- /Product Single -->
+            </div>
+            <!-- /row -->
 
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				{{-- <div class="col-md-12">
+            <!-- row -->
+            <div class="row">
+                <!-- section title -->
+                {{-- <div class="col-md-12">
 					<div class="section-title">
 						<h2 class="title">Picked For You</h2>
 					</div>
 				</div> --}}
-				<!-- section title -->
+                <!-- section title -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
@@ -778,10 +626,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -808,10 +656,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -838,10 +686,10 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
+                <!-- /Product Single -->
 
-				<!-- Product Single -->
-				{{-- <div class="col-md-3 col-sm-6 col-xs-6">
+                <!-- Product Single -->
+                {{-- <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<div class="product-thumb">
 							<div class="product-label">
@@ -869,11 +717,11 @@
 						</div>
 					</div>
 				</div> --}}
-				<!-- /Product Single -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
+                <!-- /Product Single -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
 @endsection

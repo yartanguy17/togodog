@@ -6,8 +6,14 @@
             <div class="category-nav">
                 <span class="category-header">Categories <i class="fa fa-list"></i></span>
                 <ul class="category-list">
+                    @php
+                        $category = Helpers::getCategory();
+                        // dd($category);
+                    @endphp
                     <li class="dropdown side-dropdown">
-                        {{-- <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i class="fa fa-angle-right"></i></a> --}}
+                        @foreach($category as $cat)
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">{{ $cat->title }} <i class="fa fa-angle-right"></i></a>
+                       @endforeach
                         {{-- <div class="custom-menu">
                             <div class="row">
                                 <div class="col-md-4">
@@ -203,7 +209,7 @@
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
                     <li><a href="{{ route('home') }}">Accueil</a></li>
-                    <li><a href="#">Salon de toilettage</a></li>
+                    <li><a href="{{ route('toilettage') }}">Salon de toilettage</a></li>
                     <li><a href="{{ route('shop') }}">Boutique</a></li>
                     <li><a href="{{ route('alimentation') }}">Alimentation</a></li>
                     {{-- <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Chiots Mâle <i class="fa fa-caret-down"></i></a>

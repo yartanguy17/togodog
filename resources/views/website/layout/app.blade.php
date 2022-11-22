@@ -49,6 +49,8 @@
 	@include('website.partials.category')
 	<!-- /NAVIGATION -->
 
+    @include('website.partials.message')
+
     @yield('content')
 
 	<!-- FOOTER -->

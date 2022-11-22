@@ -13,7 +13,9 @@ class ProductController extends Controller
 {
     public function index(){
 
-        return view(('admin.product.index'));
+        $products = Product::all();
+
+        return view(('admin.product.index'),compact('products'));
 
     }
 
@@ -25,35 +27,33 @@ class ProductController extends Controller
 
     }
     public function add(){
-        return view(('admin.product.create'));
+        $categorys = Category::all();
+        // dd($categorys);
+        return view(('admin.product.create'),compact('categorys'));
     }
     public function save(Request $request){
         // return view(('admin.product.create'));
         $rules = [
-            'boutique_id' => 'required',
-            'ref' => 'required',
+
             'title' => 'required',
             'summary' => 'required',
+            'cat_id' => 'required',
             'description' => 'nullable',
-
-
-            'stock' => "required|numeric",
-            'cat_id' => 'required|exists:categories,id',
             'brand_id' => 'nullable|exists:brands,id',
             'child_cat_id' => 'nullable|exists:categories,id',
-            'is_featured' => 'sometimes|in:1',
+            // 'is_featured' => 'sometimes|in:1',
             'status' => 'required|in:active,inactive',
-            'condition' => 'required|in:default,new,hot',
+            // 'condition' => 'required|in:default,new,hot',
             'price' => 'required|numeric',
             'discount' => 'nullable|numeric'
         ];
 
         $messages = array(
             'boutique_id.required' => 'Boutique est obligatoire.',
-            'ref.required' => 'Ref est obligatoire.',
+
             'title.required' => 'Nom est obligatoire.',
             'summary.required' => 'summary est obligatoire.',
-            'stock.required' => 'Stock est obligatoire.',
+            // 'stock.required' => 'Stock est obligatoire.',
 
             'cat_id.required' => 'Catégorie est obligatoire.',
             'status.required' => 'Status est obligatoire.',
@@ -69,6 +69,7 @@ class ProductController extends Controller
             return  back()->with('error', $validator->errors()->first());
         }
 
+        // dd($request->all());
 
         $product = new Product();
 
@@ -94,17 +95,14 @@ class ProductController extends Controller
         if ($request->hasfile('photo')) {
 
             $allowedfileExtension = ['jpg', 'png', 'jpeg', 'svg'];
+
             $files = $request->file('photo');
-            // dd($files);
 
-            //'/photos/produits/'.
-
-
-            foreach ($request->file('photo') as $photo) {
-                $fileNameToStore =  time() . '.' . $photo->getClientOriginalExtension();
+            foreach ($files as $photo) {
+                $filename = time().'_'.$photo->getClientOriginalName();
                 $destinationPath = public_path('/photos/produits');
-                $photo->move($destinationPath, $fileNameToStore); //Ajouter photo
-                array_push($tab, $fileNameToStore);
+                $photo->move($destinationPath, $filename); //Ajouter photo
+                array_push($tab, $filename);
             }
         }
 
@@ -130,6 +128,6 @@ class ProductController extends Controller
         // return $data;
 
         $product->save();
-        return  back()->with('info', 'Product Successfully added');
+        return  back()->with('info', 'Product Ajoutè avec Success !');
     }
 }

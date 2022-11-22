@@ -13,17 +13,15 @@
                         <thead>
                             <tr>
                                 <th>Nom</th>
-                                <th>Status</th>
+                                {{-- <th>Status</th> --}}
                                 <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($categorys as $category)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $category->title }}</td>
                                 <td>
                                     <a href="#"><i class="m-r-10 mdi mdi-eye">Voir</i></a>
                                     <a href="#"><i class="m-r-10 mdi mdi-feather">Editer</i></a>
@@ -32,6 +30,7 @@
                                 </td>
 
                             </tr>
+                            @endforeach
 
                         </tbody>
                         <tfoot>
