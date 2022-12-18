@@ -50,11 +50,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                         <div class="header-btns-icon">
                             <i class="fa fa-shopping-cart"></i>
-                            <span class="qty">3</span>
+                            <span class="qty">{{ session('sum_cart') }}</span>
                         </div>
                         <strong class="text-uppercase">Panier:</strong>
                         <br>
-                        <span>35.20$</span>
+                        {{-- <span>35.20$</span> --}}
                     </a>
                     {{-- <div class="custom-menu">
                         <div id="shopping-cart">

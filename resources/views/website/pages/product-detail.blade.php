@@ -25,7 +25,7 @@
             <!--  Product Details -->
             <div class="product product-details clearfix">
                 <div class="col-md-6">
-                    <div id="product-main-view">
+                    {{-- <div id="product-main-view">
                         <div class="product-view">
                             <img src="./img/main-product01.jpg" alt="">
                         </div>
@@ -38,20 +38,19 @@
                         <div class="product-view">
                             <img src="./img/main-product04.jpg" alt="">
                         </div>
-                    </div>
+                    </div> --}}
+                    @php
+                        $photos=explode(";",$product->photo);
+                        // dd($photos);
+                    @endphp
                     <div id="product-view">
-                        <div class="product-view">
-                            <img src="./img/thumb-product01.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/thumb-product02.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/thumb-product03.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/thumb-product04.jpg" alt="">
-                        </div>
+
+                            <div class="product-view">
+                                <img src="{{ asset('photos/produits/' . $photos[0]) }}" alt="">
+                            </div>
+
+
+
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -110,15 +109,14 @@
                     <div class="product-tab">
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Details</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
+                            {{-- <li><a data-toggle="tab" href="#tab1">Details</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li> --}}
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>{{ $product->summary }}.</p>
                             </div>
-                            <div id="tab2" class="tab-pane fade in">
+                            {{-- <div id="tab2" class="tab-pane fade in">
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -217,7 +215,7 @@
 
 
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -368,4 +366,38 @@
     <!-- /container -->
 </div>
 <!-- /section -->
+
+<script>
+    $(document).ready(function() {
+
+        $(".primary-btn").each(function(){
+
+            // const cart_data = $('[name="cart_data"]');
+
+            // $(this).click(function(e){
+
+            //     e.preventDefault();
+
+            //     $.ajax({
+            //         type:'get',
+            //         url:'/put-in-cart',
+            //         data: { id: $(this).data('id'), qty:1 },
+            //         success: (response)=>{
+
+            //             console.log(response.cart_data);
+
+            //             $('#cart-count').text(response.count)
+            //             location.reload();
+            //         },
+
+            //         error: (error)=>{
+            //             alert('probleme de conenxion');
+            //             console.log(error);
+            //         }
+            //     });
+            // });
+        });
+    })
+</script>
+
 @endsection

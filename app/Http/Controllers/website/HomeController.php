@@ -73,5 +73,28 @@ class HomeController extends Controller
         }
     }
 
-    
+    public function putItemInSession(Request $request){
+
+
+        $cart = session()->get('cart', []);
+        $sum_cart = session()->get('sum_cart');
+        // $cart = [];
+        if(!array_key_exists($request->id, $cart)) $cart[$request->id] = 0;
+        $cart[$request->id] = intval($cart[$request->id]) + intval($request->qty)+ intval($request->price);
+
+        $sum_cart= array_sum($cart);
+
+        $request->session()->put('cart', $cart);
+        $request->session()->put('sum_cart', $sum_cart);
+
+        $total=0;
+
+        foreach($cart as $key => $item){
+
+            dd($item);
+
+        }
+
+        return response()->json(['cart_data' => $cart, 'count' => array_sum($cart)]);
+    }
 }

@@ -102,8 +102,11 @@
                                             <div class="product-btns">
                                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i>
-                                                    Ajouter au panier</button>
+                                                <a type="button" class="primary-btn add-to-cart"
+                                                data-id="{{ $product_last->id }}"
+                                                   data-name="{{ $product_last->title }}"
+                                                   data-price="{{ $product_last->price }}"><i class="fa fa-shopping-cart"></i>
+                                                    Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -724,4 +727,48 @@
         <!-- /container -->
     </div>
     <!-- /section -->
+
+    <div class="default-social">
+        <!-- ShareThis BEGIN -->
+        <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+    </div>
 @endsection
+
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $(".primary-btn.add-to-cart").each(function(){
+
+            // const cart_data = $('[name="cart_data"]');
+
+            $(this).click(function(e){
+
+               
+                e.preventDefault();
+
+                console.log('id : ',$(this).data('id'));
+
+                $.ajax({
+                    type:'get',
+                    url:'/put-in-cart',
+                    data: { id: $(this).data('id'),price: $(this).data('price'), qty:1 },
+                    success: (response)=>{
+
+                        console.log(response.cart_data);
+
+                        $('#cart-count').text(response.count)
+                        location.reload();
+                    },
+
+                    error: (error)=>{
+                        alert('probleme de conenxion');
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    })
+</script>
