@@ -15,8 +15,8 @@ class CreateProductReviewsTable extends Migration
     {
         Schema::create('product_reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->bigInteger('product_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('product_id')->unsigned()->nullable();
             $table->tinyInteger('rate')->default(0);
             $table->text('review')->nullable();
             $table->enum('status',['active','inactive'])->default('active');

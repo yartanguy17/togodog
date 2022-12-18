@@ -13,11 +13,18 @@ class CreateWishlistsTable extends Migration
      */
     public function up()
     {
+
+      Schema::create('carts', function (Blueprint $table) {
+          $table->bigIncrements('id');
+          
+          $table->timestamps();
+      });
+
         Schema::create('wishlists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('product_id')->unsigned();
-            $table->bigInteger('cart_id')->unsigned()->nullable();
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('product_id')->unsigned();
+            $table->unsignedBigInteger('cart_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->float('price');
             $table->integer('quantity');
             $table->float('amount');
@@ -41,6 +48,7 @@ class CreateWishlistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishlists');
+      Schema::dropIfExists('carts');
+      Schema::dropIfExists('wishlists');
     }
 }

@@ -13,3 +13,12 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+database/migrations/old/2014_10_12_000000_create_users_table.php
+database/migrations/old/2020_07_10_112147_create_categories_table.php
+database/migrations/old/2020_07_12_083638_create_posts_table.php
+database/migrations/old/2020_07_14_023745_create_products_table.php
+database/migrations/old/2020_07_14_023746_create_orders_table.php
+database/migrations/old/2020_07_14_023748_create_shippings_table.php
+database/migrations/old/2020_07_23_143757_create_wishlists_table.php
+database/migrations/old/2020_07_24_074930_create_product_reviews_table.php
+database/migrations/old/2020_07_24_131727_create_post_comments_table.php

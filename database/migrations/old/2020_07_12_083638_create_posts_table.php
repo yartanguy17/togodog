@@ -22,9 +22,9 @@ class CreatePostsTable extends Migration
             $table->text('quote')->nullable();
             $table->string('photo')->nullable();
             $table->string('tags')->nullable();
-            $table->bigInteger('post_cat_id')->unsigned()->nullable();
-            $table->bigInteger('post_tag_id')->unsigned()->nullable();
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('post_cat_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('post_tag_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->enum('status',['active','inactive'])->default('active');
             $table->foreign('post_cat_id')->references('id')->on('post_categories')->onDelete('SET NULL');
             $table->foreign('post_tag_id')->references('id')->on('post_tags')->onDelete('SET NULL');

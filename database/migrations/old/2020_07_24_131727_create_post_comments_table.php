@@ -15,8 +15,8 @@ class CreatePostCommentsTable extends Migration
     {
         Schema::create('post_comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->bigInteger('post_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('post_id')->unsigned()->nullable();
             $table->text('comment');
             $table->enum('status',['active','inactive'])->default('active');
             $table->text('replied_comment')->nullable();
