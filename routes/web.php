@@ -68,9 +68,15 @@ Route::group(['prefix' => 'admin'], function () {
       Route::delete('category/{category}', 'destroy')->name('category.delete');
     });
 
+    // Sous-catégorie
     Route::controller('SubCategoryController')->group(function () {
-      Route::get('add.subcategorys', 'add')->name('addsubcategory');
       Route::get('subcategorys', 'index')->name('subcategory');
+      Route::get('subcategorys/{subCategory}', 'show')->name('subCategory.show');
+      Route::get('add.subcategorys', 'add')->name('addsubcategory');
+      Route::get('subcategorys/{subCategory}', 'store')->name('subCategory.store');
+      Route::get('subcategorys/{subCategory}', 'edit')->name('subCategory.edit');
+      Route::put('subcategorys/{subCategory}', 'update')->name('subCategory.update');
+      Route::delete('subcategorys/{subCategory}', 'destroy')->name('subCategory.delete');
     });
 
     // Product
