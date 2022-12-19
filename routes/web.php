@@ -73,16 +73,22 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('subcategorys', 'index')->name('subcategory');
       Route::get('subcategorys/{subCategory}', 'show')->name('subCategory.show');
       Route::get('add.subcategorys', 'add')->name('addsubcategory');
-      Route::get('subcategorys/{subCategory}', 'store')->name('subCategory.store');
+      Route::post('subcategorys/{subCategory}', 'store')->name('subCategory.store');
       Route::get('subcategorys/{subCategory}', 'edit')->name('subCategory.edit');
       Route::put('subcategorys/{subCategory}', 'update')->name('subCategory.update');
       Route::delete('subcategorys/{subCategory}', 'destroy')->name('subCategory.delete');
     });
 
     // Product
-    Route::get('add.product', 'ProductController@add')->name('addproduct');
-    Route::post('product', 'ProductController@save')->name('saveproduct');
-    Route::get('products', 'ProductController@index')->name('products');
+    Route::controller('ProductController')->group(function () {
+      Route::get('add.product', 'ProductController@add')->name('addproduct');
+      Route::post('product', 'ProductController@save')->name('saveproduct');
+      Route::get('products', 'ProductController@index')->name('products');
+      Route::get('products/{product}','show')->name('products.show');
+      Route::get('products/{product}/edit','edit')->name('products.edit');
+      Route::put('products/{product}','update')->name('products.update');
+      Route::delete('products/{product}','destroy')->name('products.delete');
+    });
     Route::get('reservation', 'ReservationController@index')->name('reservation');
   });
 });
