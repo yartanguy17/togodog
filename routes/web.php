@@ -89,7 +89,17 @@ Route::group(['prefix' => 'admin'], function () {
       Route::put('products/{product}','update')->name('products.update');
       Route::delete('products/{product}','destroy')->name('products.delete');
     });
-    Route::get('reservation', 'ReservationController@index')->name('reservation');
+
+    // reservation/Toilettage
+    Route::controller('ReservationController')->group(function() {
+      Route::get('reservations', 'index')->name('reservations');
+      Route::get('reservations/create', 'create')->name('reservations.create');
+      Route::get('reservations/{toilettag}', 'show')->name('reservations.show');
+      Route::get('reservations/{toilettag}/edit', 'edit')->name('reservations.edit');
+      Route::post('reservations', 'store')->name('reservations.store');
+      Route::put('reservations/{toilettag}', 'update')->name('reservations.update');
+      Route::delete('reservations/{toilettag}', 'destroy')->name('reservations.delete');
+    });
   });
 });
 
