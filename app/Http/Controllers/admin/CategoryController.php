@@ -94,12 +94,10 @@ class CategoryController extends Controller
 
     $category->save();
 
-    return redirect()
-      ->route('category.show', ['category' => $category->id])
-      ->with("info", "La Catégorie $category->categorie_name a été mise à jour avec succès.");
+    return back()->with("info", "La Catégorie $category->categorie_name a été mise à jour avec succès.");
   }
 
-  public function delete(Category $category)
+  public function destroy(Category $category)
   {
     $category_title = $category->title;
     $category->delete();

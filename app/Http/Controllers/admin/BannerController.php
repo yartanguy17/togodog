@@ -23,16 +23,16 @@ class BannerController extends Controller
 
   public function add()
   {
-
     return view("admin.banner-sliders.create");
   }
+
   public function show($id)
   {
-
     $banner = Banner::find($id);
 
     return view("admin.banner-sliders.show", compact('banner'));
   }
+
   public function edite(Request $request, $id)
   {
 
@@ -74,5 +74,50 @@ class BannerController extends Controller
       request()->session()->flash('error', 'Error occurred while adding banner');
     }
     return back();
+  }
+
+  public function update(Request $request, Banner $banner)
+  {
+    // return $request->all();
+    $this->validate($request, [
+      'title' => 'string|required|max:50',
+      'description' => 'string|nullable',
+      'photo' => 'required',
+      'status' => 'required|in:active,inactive',
+    ]);
+
+    $data = $request->all();
+    $slug = Str::slug($request->title);
+    $count = Banner::where('slug', $slug)->count();
+    $data['photo'] = $request->file('photo');
+
+    // Il faudrait éventullement gérer la suppression de la précédente bannière s'il y'a eu mise à jour 
+    // de l'image de celle-ci
+    $filename = time() . '.' . $data['photo']->getClientOriginalExtension();
+    $location = 'storage/banner';
+    $data['photo']->move($location, $filename);
+    $data['photo'] = $filename;
+
+    if ($count > 0) {
+      $slug = $slug . '-' . date('ymdis') . '-' . rand(0, 999);
+    }
+    $data['slug'] = $slug;
+    
+    $status = $banner->update($data);
+    
+    if ($status) {
+      request()->session()->flash('success', 'Banner successfully updated');
+    } else {
+      request()->session()->flash('error', 'Error occurred while updating banner');
+    }
+    return back();
+  }
+
+  public function destroy(Banner $banner)
+  {
+    $banner_title = $banner->title;
+    $banner->delete();
+    return redirect()->route('banner')->with("info", "La bannière $banner_title a été supprimée avec succès.");
+
   }
 }
