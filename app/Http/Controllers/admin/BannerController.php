@@ -78,7 +78,6 @@ class BannerController extends Controller
 
   public function update(Request $request, Banner $banner)
   {
-    // return $request->all();
     $this->validate($request, [
       'title' => 'string|required|max:50',
       'description' => 'string|nullable',
@@ -104,7 +103,7 @@ class BannerController extends Controller
     $data['slug'] = $slug;
     
     $status = $banner->update($data);
-    
+
     if ($status) {
       request()->session()->flash('success', 'Banner successfully updated');
     } else {
