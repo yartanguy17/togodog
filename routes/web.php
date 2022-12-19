@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // Groupe de routes générées par Breeze
 // Route::get('/', function () {
 //   return view('welcome');
@@ -22,13 +11,19 @@ use Illuminate\Support\Facades\Route;
 //   return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', 'website\HomeController@index')->name('home');
-Route::get('/toilettage', 'website\HomeController@toillettag')->name('toilettage');
-Route::post('/add-toilettage', 'website\HomeController@saveToillettag')->name('addtoilettage');
-Route::get('/shop', 'website\ShopController@index')->name('shop');
-Route::get('/product-detail/{id}', 'website\ProductController@index')->name('product-detail');
-Route::get('/alimentation', 'website\ProductController@getAlimentation')->name('alimentation');
-Route::get('put-in-cart', 'website\HomeController@putItemInSession')->name('put-in-cart');
+Route::namespace('Website')->group(function() {
+
+  Route::controller('HomeController')->group(function() {
+    Route::get('/', 'index')->name('home');
+    Route::get('toilettage', 'toillettag')->name('toilettage');
+    Route::post('add-toilettage', 'saveToillettag')->name('addtoilettage');
+    Route::get('put-in-cart', 'putItemInSession')->name('put-in-cart');
+  });
+
+  Route::get('/shop', 'ShopController@index')->name('shop');
+  Route::get('/product-detail/{id}', 'ProductController@index')->name('product-detail');
+  Route::get('/alimentation', 'ProductController@getAlimentation')->name('alimentation');
+});
 
 // Socialite
 // Route::get('login/{provider}/', 'Auth\LoginController@redirect')->name('login.redirect');
@@ -102,7 +97,5 @@ Route::group(['prefix' => 'admin'], function () {
     });
   });
 });
-
-
 
 require __DIR__ . '/auth.php';
