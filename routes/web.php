@@ -1,18 +1,18 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 // Groupe de routes générées par Breeze
-// Route::get('/', function () {
-//   return view('welcome');
-// });
+Route::get('/', function () {
+  return view('welcome');
+});
 
-// Route::get('/dashboard', function () {
-//   return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+  return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::namespace('Website')->group(function() {
-
+Route::middleware(['auth', 'web'])->namespace('Website')->group(function() {
   Route::controller('HomeController')->group(function() {
     Route::get('/', 'index')->name('home');
     Route::get('toilettage', 'toillettag')->name('toilettage');
@@ -28,16 +28,16 @@ Route::namespace('Website')->group(function() {
 // Socialite
 // Route::get('login/{provider}/', 'Auth\LoginController@redirect')->name('login.redirect');
 // Route::get('login/{provider}/callback/', 'Auth\LoginController@Callback')->name('login.callback');
-Route::get('login', 'auth\LoginController@getLogin')->name('login');
-Route::group(['prefix' => 'admin'], function () {
-
+// Route::get('login', 'auth\LoginController@getLogin')->name('login');
+Route::prefix('admin')->group(function () {
+  
   // Route::namespace('Auth')->group(function () {
   //   Route::get('login', 'LoginController@getLogin')->name('login');
   //   Route::post('login', 'LoginController@postLogin')->name('login');
   // });
 
-  Route::namespace('Admin')->group(function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+  Route::middleware(['auth:admin','prevent', 'admin'])->namespace('Admin')->group(function () {
+    // Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     // User
     Route::get('add.user', 'UserController@add')->name('adduser');
     Route::get('users', 'UserController@index')->name('user');

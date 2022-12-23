@@ -97,7 +97,7 @@
                                     <div id="submenu-1-3" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('reservation') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des reservation</a>
+                                                <a class="nav-link" href="{{ route('reservations') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des reservation</a>
                                             </li>
 
                                         </ul>

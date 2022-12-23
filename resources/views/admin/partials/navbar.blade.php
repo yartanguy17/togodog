@@ -99,7 +99,13 @@
                         </div>
                         <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Mon compte</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Paramètre</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Deconnexion</a>
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                          <form action="{{ route('logout') }}" method="post" id="logout-form" hidden>
+                            @csrf
+                          </form>
+                          <i class="fas fa-power-off mr-2"></i>
+                          Deconnexion
+                      </a>
                     </div>
                 </li>
             </ul>
