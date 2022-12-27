@@ -12,7 +12,7 @@
                     @endphp
                     <li class="dropdown side-dropdown">
                         @foreach($category as $cat)
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">{{ $cat->title }} <i class="fa fa-angle-right"></i></a>
+                        <a href="{{ route('product-category',Crypt::encrypt( $cat->id)) }}">{{ $cat->title }}</a>
                        @endforeach
                         {{-- <div class="custom-menu">
                             <div class="row">

@@ -111,24 +111,32 @@
 
                 <!-- aside widget -->
                 <div class="aside">
-                    <h3 class="aside-title">Produit le mieux noté</h3>
+                    <h3 class="aside-title">Chiens de race <strong>{{$category[0]->title}}</strong></h3>
                     <!-- widget product -->
-                    <div class="product product-widget">
-                        <div class="product-thumb">
-                            <img src="{{ asset('website/assets/img/product/7.jpeg') }}" alt="">
-                        </div>
-                        <div class="product-body">
-                            {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
+                    @foreach ($products as $product)
+                    @php
+                    $photo = explode(';', $product->photo);
+                @endphp
+                    <a href="{{ route('product-detail',Crypt::encrypt($product->id)) }}">
+                        <div class="product product-widget">
+                            <div class="product-thumb">
+                                <img src="{{ asset('photos/produits/' . $photo[0]) }}" alt="{{$product->title}}">
+                            </div>
+                            <div class="product-body">
+                                <h2 class="product-name"><a href="#">{{$product->title}}</a></h2>
+                                <h3 class="product-price">{{$product->price}} XOF</h3>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o empty"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
+                    @endforeach
+                    
                     <!-- /widget product -->
 
                     <!-- widget product -->
@@ -197,8 +205,8 @@
                 <div id="store">
                     <!-- row -->
                     <div class="row">
-                       
-                       
+
+                        @if ($products!=null)
                             
                         @foreach ($products as $product)
                         @php
@@ -242,7 +250,11 @@
 
                     </a>
                     @endforeach
-                        
+                        @else
+                            <div class="col-md-4 col-sm-6 col-xs-6">
+                                <h1>Pas de {{$category[0]->title}}</h1>
+                            </div>
+                        @endif
 
                     </div>
                     <!-- /row -->

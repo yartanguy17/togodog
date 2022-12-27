@@ -25,6 +25,8 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('website/assets/css/style.css') }}" />
 
+	<link rel="icon" type="image/x-icon" href="{{asset('website/assets/img/logo.jpg')}}" style="height: 600px;width: 500px;">
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

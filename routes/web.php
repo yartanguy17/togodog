@@ -12,18 +12,19 @@ Route::get('/dashboard', function () {
   return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['auth', 'web'])->namespace('Website')->group(function() {
-  Route::controller('HomeController')->group(function() {
+
+  Route::controller('website\HomeController')->group(function() {
     Route::get('/', 'index')->name('home');
     Route::get('toilettage', 'toillettag')->name('toilettage');
     Route::post('add-toilettage', 'saveToillettag')->name('addtoilettage');
     Route::get('put-in-cart', 'putItemInSession')->name('put-in-cart');
   });
 
-  Route::get('/shop', 'ShopController@index')->name('shop');
-  Route::get('/product-detail/{id}', 'ProductController@index')->name('product-detail');
-  Route::get('/alimentation', 'ProductController@getAlimentation')->name('alimentation');
-});
+  Route::get('/shop', 'website\ShopController@index')->name('shop');
+  Route::get('/product-detail/{id}', 'website\ProductController@index')->name('product-detail');
+  Route::get('/product-category/{id}', 'website\ShopController@shopByCategory')->name('product-category');
+  Route::get('/alimentation', 'website\ProductController@getAlimentation')->name('alimentation');
+
 
 // Socialite
 // Route::get('login/{provider}/', 'Auth\LoginController@redirect')->name('login.redirect');
