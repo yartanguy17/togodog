@@ -145,7 +145,7 @@
                             <div class="product-label">
                                 <span class="sale">-20%</span>
                             </div>
-                          
+
                             <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
                             <img src="{{ asset('website/assets/img/banner/3.jpg') }}" alt="">
                         </div>
@@ -170,7 +170,7 @@
                 </div> --}}
                 <!-- /Product Single -->
 
-               
+
                 <!-- /Product Slick -->
             </div>
             <!-- /row -->
@@ -608,10 +608,10 @@
         <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
     </div>
 @endsection
-
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+
 <script>
     $(document).ready(function() {
 
@@ -621,7 +621,7 @@
 
             $(this).click(function(e){
 
-               
+
                 e.preventDefault();
 
                 console.log('id : ',$(this).data('id'));
@@ -629,7 +629,7 @@
                 $.ajax({
                     type:'get',
                     url:'/put-in-cart',
-                    data: { id: $(this).data('id'),price: $(this).data('price'), qty:1 },
+                    data: { id: $(this).data('id'), qty:1 },
                     success: (response)=>{
 
                         console.log(response.cart_data);

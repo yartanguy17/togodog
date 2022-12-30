@@ -50,7 +50,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                         <div class="header-btns-icon">
                             <i class="fa fa-shopping-cart"></i>
-                            <span class="qty">{{ session('sum_cart') }}</span>
+                            <span class="qty">{{ array_sum(session()->get('cart', [])) }}</span>
                         </div>
                         <strong class="text-uppercase">Panier:</strong>
                         <br>
