@@ -13,7 +13,7 @@
                     @foreach ($banners as $banner)
                         <!-- banner -->
                         <div class="banner banner-1">
-                            <img src="{{ asset('storage/banner/' . $banner->photo) }}" alt="">
+                            <img src="{{ asset('public/storage/banner/' . $banner->photo) }}" alt="">
                             <div class="banner-caption text-center">
                                 {{-- <h1>Bags sale</h1>
 							<h3 class="white-color font-weak">Up to 50% Discount</h3>
@@ -608,10 +608,10 @@
         <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
     </div>
 @endsection
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
 
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
 

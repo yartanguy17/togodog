@@ -76,13 +76,25 @@ class HomeController extends Controller
     public function putItemInSession(Request $request){
 
         $cart = session()->get('cart', []);
+        $total = session()->get('total');
+
+         $totals = 0;
 
         if(!array_key_exists($request->id, $cart)) $cart[$request->id] = 0;
         $cart[$request->id] = intval($cart[$request->id]) + intval($request->qty);
 
 
+        foreach ($cart as $key => $qty){
+
+            $product = Product::find($key);
+            $totals += $product->price * $qty;
+        }
+
+
+
 
         $request->session()->put('cart', $cart);
+        $request->session()->put('total', $totals);
 
         // request()->session()->flash('success', 'Produit ajouté au panier');
 

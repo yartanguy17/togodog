@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
   Route::get('/product-detail/{id}', 'website\ProductController@index')->name('product-detail');
   Route::get('/product-category/{id}', 'website\ShopController@shopByCategory')->name('product-category');
   Route::get('/alimentation', 'website\ProductController@getAlimentation')->name('alimentation');
+  Route::get('/panier', 'website\CartController@index')->name('view.panier');
 
 
 // Socialite
@@ -31,7 +32,7 @@ Route::get('/dashboard', function () {
 // Route::get('login/{provider}/callback/', 'Auth\LoginController@Callback')->name('login.callback');
 // Route::get('login', 'auth\LoginController@getLogin')->name('login');
 Route::prefix('admin')->group(function () {
-  
+
   // Route::namespace('Auth')->group(function () {
   //   Route::get('login', 'LoginController@getLogin')->name('login');
   //   Route::post('login', 'LoginController@postLogin')->name('login');
@@ -99,4 +100,4 @@ Route::prefix('admin')->group(function () {
   });
 });
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';

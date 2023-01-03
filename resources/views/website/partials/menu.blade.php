@@ -15,8 +15,7 @@
                     <input class="input search-input" type="text" placeholder="Recherche">
                     <select class="input search-categories">
                         <option value="0">Toutes les Categories</option>
-                        <option value="1">Category 01</option>
-                        <option value="1">Category 02</option>
+                       
                     </select>
                     <button class="search-btn"><i class="fa fa-search"></i></button>
                 </form>
@@ -54,38 +53,54 @@
                         </div>
                         <strong class="text-uppercase">Panier:</strong>
                         <br>
-                        {{-- <span>35.20$</span> --}}
+                        @if(empty(session()->get('total')))
+                        <span>0 XOF</span>
+                        @else
+                        <span>{{ session()->get('total') }} XOF</span>
+                        @endif
                     </a>
-                    {{-- <div class="custom-menu">
+                    <div class="custom-menu">
                         <div id="shopping-cart">
                             <div class="shopping-cart-list">
+
+                                @php
+
+                                $total = 0;
+                                $cart = session()->get('cart', []);
+
+                                // dd($cart);
+
+                                @endphp
+                                @foreach ($cart as $key => $qty)
+
+                                dd($key);
+                                @php
+                                $product = App\Models\Product::find($key);
+                                $photo = explode(';', $product->photo);
+                                $total += $product->price * $qty;
+                                @endphp
+
                                 <div class="product product-widget">
                                     <div class="product-thumb">
-                                        <img src="./img/thumb-product01.jpg" alt="">
+                                        <img src="{{ asset('photos/produits/' . $photo[0]) }}" alt="{{$product->title}}">
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-                                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                        <h3 class="product-price">{{$product->price}} XOF<span class="qty">{{ $qty }} </span></h3>
+                                        <h2 class="product-name"><a href="#">{{$product->title}}</a></h2>
                                     </div>
                                     <button class="cancel-btn"><i class="fa fa-trash"></i></button>
                                 </div>
-                                <div class="product product-widget">
-                                    <div class="product-thumb">
-                                        <img src="./img/thumb-product01.jpg" alt="">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-                                        <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    </div>
-                                    <button class="cancel-btn"><i class="fa fa-trash"></i></button>
-                                </div>
+
+                                @endforeach
+
+
                             </div>
                             <div class="shopping-cart-btns">
-                                <button class="main-btn">View Cart</button>
-                                <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+                                <a href="{{ route('view.panier') }}"><button class="main-btn">Voir le panier</button></a>
+                                <a href=""></a><button class="primary-btn"> Commander <i class="fa fa-arrow-circle-right"></i></button>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </li>
                 <!-- /Cart -->
 
