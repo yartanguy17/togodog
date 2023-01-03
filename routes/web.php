@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
   Route::get('/product-category/{id}', 'website\ShopController@shopByCategory')->name('product-category');
   Route::get('/alimentation', 'website\ProductController@getAlimentation')->name('alimentation');
   Route::get('/panier', 'website\CartController@index')->name('view.panier');
+  Route::get('/commande', 'website\TchekoutController@index')->name('view.order');
 
 
 // Socialite

@@ -2,10 +2,12 @@
 
 @section('content')
 
-<div class="col-md-12">
+<div class="col-md-4"></div>
+
+<div class="col-md-8">
     <div class="order-summary clearfix">
         <div class="section-title">
-            <h3 class="title">Order Review</h3>
+            <h3 class="title">REVUE DE LA COMMANDE</h3>
         </div>
         <table class="shopping-cart-table table">
             <thead>
@@ -65,7 +67,8 @@
             </tfoot>
         </table>
         <div class="pull-right">
-            <button class="primary-btn">Passer la commande</button>
+            <a href="{{ route('view.order') }}"> <button class="primary-btn">Passer la commande</button></a>
+
         </div>
     </div>
 

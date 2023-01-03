@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class TchekoutController extends Controller
 {
     public function index(){
-        return view('website.pages.index');
+        return view('website.pages.tcheckout');
     }
 }
