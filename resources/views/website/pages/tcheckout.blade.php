@@ -28,26 +28,26 @@
 								<h3 class="title">Détails de la facturation</h3>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
+								<input class="input" type="text" name="first-name" placeholder="Nom">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
+								<input class="input" type="text" name="last-name" placeholder="Prénom">
 							</div>
 							<div class="form-group">
 								<input class="input" type="email" name="email" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
+								<input class="input" type="text" name="address" placeholder="Addresse">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
+								<input class="input" type="text" name="city" placeholder="Quartier">
 							</div>
-							<div class="form-group">
+							{{-- <div class="form-group">
 								<input class="input" type="text" name="country" placeholder="Country">
 							</div>
 							<div class="form-group">
 								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
+							</div> --}}
 							<div class="form-group">
 								<input class="input" type="tel" name="tel" placeholder="Telephone">
 							</div>

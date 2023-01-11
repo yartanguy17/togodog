@@ -31,6 +31,10 @@
                        <input id="inputText4" type="number" class="form-control" placeholder="Prix" name="price">
                    </div>
                     <div class="form-group">
+                       <label for="inputText4" class="col-form-label">Nombres <span class="text-danger">*</span> </label>
+                       <input id="inputText4" type="number" class="form-control" placeholder="Nombre" name="stock">
+                   </div>
+                    <div class="form-group">
                         <label for="inputEmail">Description</label> <span class="text-danger">*</span>
                         <textarea type="text" class="form-control" name="summary">
 

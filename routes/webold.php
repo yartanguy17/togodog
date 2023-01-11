@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
-
 // Groupe de routes générées par Breeze
 Route::get('/', function () {
   return view('welcome');
@@ -102,11 +101,6 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
     // Commande
 
     Route::get('commande', 'admin\OrderController@index')->name('commande');
-
-    // Video
-
-    Route::get('video-upload', 'admin\VideosController@getVideoUploadForm')->name('get.video.upload');
-    Route::post('video-upload', 'admin\VideosController@uploadVideo')->name('store.video');
 
 //   });
 });

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Toilettag;
 use App\Models\Banner;
+use App\Models\Video;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -20,8 +21,11 @@ class HomeController extends Controller
         $banners = Banner::where('status','active')->orderBy('id','desc')->limit(4)->get();
         $product_lasts = Product::where('status','active')->orderBy('id','desc')->limit(12)->get();
         $product_firsts = Product::where('status','active')->orderBy('id','desc')->limit(80)->get();
+        $videos = Video::all();
 
-        return view('website.pages.index',compact('banners','product_lasts','product_firsts'));
+        // dd($videos);
+
+        return view('website.pages.index',compact('banners','product_lasts','product_firsts','videos'));
     }
     public function toillettag(){
 

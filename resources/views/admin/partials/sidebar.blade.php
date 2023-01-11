@@ -93,6 +93,23 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-45" aria-controls="submenu-1-45">Article vidèo</a>
+                                    <div id="submenu-1-45" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('get.video.upload') }}">Ajouter</a>
+                                            </li>
+
+                                            {{-- <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('products') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i>Liste des article</a>
+                                            </li> --}}
+                                            {{-- <li class="nav-item">
+                                                <a class="nav-link" href="influencer-profile.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Influencer Profile</a>
+                                            </li> --}}
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-3" aria-controls="submenu-1-3">Reservation</a>
                                     <div id="submenu-1-3" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
@@ -104,16 +121,15 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Commandes</a>
-                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-78" aria-controls="submenu-1-78">Commandes</a>
+                                    <div id="submenu-1-78" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="dashboard-influencer.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des commandes en attente</a>
+                                                <a class="nav-link" href="{{ route('commande') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des commandes</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="dashboard-influencer.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des commandes effectuèes</a>
+                                                {{-- <a class="nav-link" href="dashboard-influencer.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Liste des commandes effectuèes</a> --}}
                                             </li>
-
 
                                         </ul>
                                     </div>

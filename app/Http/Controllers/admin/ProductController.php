@@ -18,6 +18,7 @@ class ProductController extends Controller
 
   public function show(Product $product)
   {
+    dd($product);
     return view('admin.product.show', compact('product'));
   }
 

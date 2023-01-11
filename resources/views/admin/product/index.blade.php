@@ -48,7 +48,7 @@
 
                                 </td>
                                 <td>
-                                    <a href="#"><i class="m-r-10 mdi mdi-eye">Voir</i></a>
+                                    <a href="{{ route('products.show'.$product) }}"><i class="m-r-10 mdi mdi-eye">Voir</i></a>
                                     <a href="#"><i class="m-r-10 mdi mdi-feather">Editer</i></a>
                                     <a href="#"><i class="m-r-10 mdi mdi-delete">Supprimer</i></a>
 

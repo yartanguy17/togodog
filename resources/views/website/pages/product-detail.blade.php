@@ -94,7 +94,7 @@
                         <div class="product-btns">
                             <div class="qty-input">
                                 <span class="text-uppercase">QTY: </span>
-                                <input class="input" type="number">
+                                <input class="input" type="number" value="1">
                             </div>
                             <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             <div class="pull-right">
@@ -274,9 +274,9 @@
                         </div>
                     </div>
                 </a>
-           
+
             @endforeach
-           
+
         </div>
         <!-- /row -->
     </div>
