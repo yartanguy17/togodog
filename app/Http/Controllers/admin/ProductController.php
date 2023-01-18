@@ -69,6 +69,24 @@ class ProductController extends Controller
     }
 
     $product->photo = implode(";", $tab);
+    $filesv = [];
+    $tabv = [];
+
+    if ($request->hasfile('video')) {
+
+      $allowedfileExtension = ['jpg', 'png', 'jpeg', 'svg'];
+
+      $filesv = $request->file('photo');
+
+      foreach ($files as $photo) {
+        $filename = time() . '_' . $photo->getClientOriginalName();
+        $destinationPath = public_path('/photos/video');
+        $photo->move($destinationPath, $filename); //Ajouter photo
+        array_push($tab, $filename);
+      }
+    }
+
+    $product->video = implode(";", $tabv);
 
     $slug = Str::slug($request->title);
     $count = Product::where('slug', $slug)->count();

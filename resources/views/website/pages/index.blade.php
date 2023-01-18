@@ -13,7 +13,7 @@
                     @foreach ($banners as $banner)
                         <!-- banner -->
                         <div class="banner banner-1">
-                            <img src="{{ asset('public/storage/banner/' . $banner->photo) }}" alt="">
+                            <img src="{{ asset('storage/banner/'.$banner->photo) }}" alt="">
                             <div class="banner-caption text-center">
                                 {{-- <h1>Bags sale</h1>
 							<h3 class="white-color font-weak">Up to 50% Discount</h3>
@@ -481,21 +481,29 @@
 
                 <!-- Product Single -->
 
-                @if ($videos != null)
+                {{-- @if ($videos != null)
 
                 @foreach ($videos as $video)
                 <div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="product product-single">
 						<video width="320" height="240" controls>
-                            {{-- <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg> --}}
+                            <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
                             <source src="{{ asset('public/videos/'.$video) }}" type=video/mp4>
                         </video>
 					</div>
 				</div>
                 @endforeach
 
-                @endif
+                @endif --}}
 
+                <div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="product product-single">
+						<video width="320" height="240" controls>
+
+                            <source src="{{ asset('public/videos/test.mp4') }}" type=video/mp4>
+                        </video>
+					</div>
+				</div>
                 <!-- /Product Single -->
 
                 <!-- Product Single -->

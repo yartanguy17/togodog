@@ -81,10 +81,16 @@
                                     <div id="submenu-1-4" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('addproduct') }}">Ajouter</a>
+                                                <a class="nav-link" href="{{ route('addproduct') }}">Ajouter Chien</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('products') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i>Liste des article</a>
+                                                <a class="nav-link" href="{{ route('products') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i>Liste des chiens</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('create.food') }}">Ajouter Article</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('get.food') }}"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i>Liste des articles</a>
                                             </li>
                                             {{-- <li class="nav-item">
                                                 <a class="nav-link" href="influencer-profile.html"> <i class="m-r-10 mdi mdi-format-list-bulleted"></i> Influencer Profile</a>

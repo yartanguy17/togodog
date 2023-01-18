@@ -6,7 +6,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="#">Accueil</a></li>
-                <li class="active">Alimentation</li>
+                <li class="active">Contact</li>
             </ul>
         </div>
     </div>
@@ -152,110 +152,100 @@
                 </div> --}}
                     <!-- /store top filter -->
 
-                    <!-- STORE -->
-                    <div id="store">
-                        <!-- row -->
-                        <div class="row">
-                            @foreach ($foods as $food)
-                                @php
-                                    $photo = explode(';', $food->photo);
-                                @endphp
-                                <a href="">
-                                    <!-- Product Single -->
-                                    <div class="col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product product-single">
-                                            <div class="product-thumb">
-                                                <div class="product-label">
 
-                                                    {{-- <span class="sale">-20%</span> --}}
-                                                </div>
-                                                <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick
-                                                    view</button>
-                                                <img src="{{ asset('photos/produits/' . $photo[0]) }}"
-                                                    alt="{{ $food->title }}" height="200px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class=" contact_us">
+                                    <div class="row">
+                                        <div class="col-md-12 coll-lg-6">
+                                            <div>
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6287162431454!2d1.3842807147689324!3d6.180424595525592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7edfced89104de8a!2zNsKwMTAnNDkuNSJOIDHCsDIzJzExLjMiRQ!5e0!3m2!1sfr!2stg!4v1673677223050!5m2!1sfr!2stg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                                    </iframe>
                                             </div>
-                                            <div class="product-body">
-                                                @if ($food->litre != null)
-                                                    <h3 class="product-price">{{ $food->litre }} </h3>
-                                                @elseif ($food->poids != null)
-                                                    <h3 class="product-price">{{ $food->pods }} </h3>
-                                                @endif
-                                                <h3 class="product-price">{{ $food->stock }}</h3>
-                                                <h3 class="product-price">{{ $food->price }} XOF</h3>
-                                                <div class="product-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o empty"></i>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-12 col-lg-6 ">
+                                            <div class="newslatter_outer">
+                                                <div>
+                                                    <h5>Adresse:</h5>
+                                                    <ul>
+                                                        {{-- <li><i class="fas fa-map-marker-alt"></i>
+                                                            
+                                                        </li> --}}
+                                                        {{-- <li>
+                                                            B.P. 14547
+                                                        </li> --}}
+                                                        <li><a href="tel:#"><i class="fas fa-phone"></i> +228 98626159 ( call & WhatsApp)
+                                                            90723519</a></li>
+                                                        <li><a href="tel:#"><i class="fas fa-envelope"></i>
+                                                            togocatdog@gmail.com</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <h2 class="product-name"><a href="#">{{ $food->title }}</a></h2>
-                                                <div class="qty-input">
-                                                    <span class="text-uppercase">Quantité: </span>
-                                                    <input class="input" type="number" value="1">
+                                            </div>
+
+                                            <form class="newsletter" action="" method="POST">
+                                                @csrf
+                                                <h5>Newsletter</h5>
+                                                <div class="d-flex">
+                                                    <input class="form-control" type="email">
+                                                    <input class="btn btn-primary" type="submit" value="Souscrire">
                                                 </div>
-                                                <div class="product-btns">
-                                                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                                    <button class="main-btn icon-btn"><i
-                                                            class="fa fa-exchange"></i></button>
-                                                    <a type="button" class="primary-btn add-to-cart"
-                                                        data-id="{{ $food->id }}" data-name="{{ $food->title }}"
-                                                        data-price="{{ $food->price }}"><i class="fa fa-shopping-cart"></i>
-                                                        Ajouter au panier</a>
-                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6">
+                                            <div class="only-form-box">
+                                               
+                                                <form action="" method="POST">
+                                                    @csrf
+                                                    <div class="com_class_form">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="name"
+                                                                size="40" placeholder="Nom">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="firstname"
+                                                                size="40" placeholder="Prénom(s)">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="email" name="email"
+                                                                placeholder="E-mail">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="phone_number"
+                                                                size="40" placeholder="Téléphone">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="subject"
+                                                                placeholder="Sujet">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" name="message" cols="40" rows="3" placeholder="Message"></textarea>
+                                                        </div>
+                                                        {{-- <div class="form-group">
+                                                        {!! app('captcha')->display() !!}
+                                                        @if ($errors->has('g-recaptcha-response'))
+                                                            <span class="help-block text-danger">
+                                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                    </div> --}}
+                                                        <div class="form-group">
+                                                            <input class="btn btn-primary" type="submit" value="Envoyer">
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- /Product Single -->
-
-
-
-                                    <div class="clearfix visible-sm visible-xs"></div>
-
-                                </a>
-                            @endforeach
-
-                            <!-- /Product Single -->
-
-                            <div class="clearfix visible-md visible-lg"></div>
-
-                            <!-- Product Single -->
-                            {{-- <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>New</span>
-                                    </div>
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="./img/product04.jpg" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">$32.50</h3>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-                                    </div>
-                                    <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                                    <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                    </div>
                                 </div>
                             </div>
-                        </div> --}}
-                            <!-- /Product Single -->
-
-                            <div class="clearfix visible-sm visible-xs"></div>
-
-
                         </div>
-                        <!-- /row -->
                     </div>
-                    <!-- /STORE -->
 
                     <!-- store bottom filter -->
                     {{-- <div class="store-filter clearfix">

@@ -7,8 +7,8 @@
 <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="#">Shop</a></li>
-            <li class="active">Products</li>
+            <li><a href="#">Accueil</a></li>
+            <li class="active">Contact</li>
         </ul>
     </div>
 </div>
@@ -55,10 +55,10 @@
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
-                <div class="aside">
+                {{-- <div class="aside">
                     <h3 class="aside-title">Filter by Price</h3>
                     <div id="price-slider"></div>
-                </div>
+                </div> --}}
                 <!-- aside widget -->
 
                 <!-- aside widget -->
@@ -77,14 +77,14 @@
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
-                <div class="aside">
+                {{-- <div class="aside">
                     <h3 class="aside-title">Filter By Ages:</h3>
                     <ul class="size-option">
                         <li class="active"><a href="#">6 weeks - 12 weeks</a></li>
                         <li class="active"><a href="#">14 weeks 24 weeks</a></li>
                         <li><a href="#">24 weeks ...</a></li>
                     </ul>
-                </div>
+                </div> --}}
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
@@ -100,56 +100,17 @@
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
-                <div class="aside">
+                {{-- <div class="aside">
                     <h3 class="aside-title">Filter by Gender</h3>
                     <ul class="list-links">
-                        <li class="active"><a href="#">Mâle</a></li>
-                        <li><a href="#">Femelle</a></li>
+                        <li class="active"><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
                     </ul>
-                </div>
+                </div> --}}
                 <!-- /aside widget -->
 
                 <!-- aside widget -->
-                <div class="aside">
-                    <h3 class="aside-title">Produit le mieux noté</h3>
-                    <!-- widget product -->
-                    <div class="product product-widget">
-                        <div class="product-thumb">
-                            <img src="{{ asset('website/assets/img/product/7.jpeg') }}" alt="">
-                        </div>
-                        <div class="product-body">
-                            {{-- <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> --}}
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /widget product -->
 
-                    <!-- widget product -->
-                    <div class="product product-widget">
-                        <div class="product-thumb">
-                            <img src="{{ asset('website/assets/img/product/8.jpeg') }}" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-                            {{-- <h3 class="product-price">$32.50</h3> --}}
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /widget product -->
-                </div>
                 <!-- /aside widget -->
             </div>
             <!-- /ASIDE -->
@@ -193,69 +154,47 @@
                 </div> --}}
                 <!-- /store top filter -->
 
-                <!-- STORE -->
-                <div id="store">
-                    <!-- row -->
-                    <div class="row">
-                       
-                       
-                            
-                        @foreach ($products as $product)
-                        @php
-                        $photo = explode(';', $product->photo);
-                    @endphp
-                    <a href="{{ route('product-detail',Crypt::encrypt($product->id)) }}">
-                        <!-- Product Single -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>New</span>
-                                        {{-- <span class="sale">-20%</span> --}}
+                
+                <div class="simple_page">
+                    <div class="container ">
+                        <div class="row">
+        
+                            <div class="user_elements_box">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4>Présentation</h4>
+        
+                                        <p>  !
+                                        </p>
                                     </div>
-                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-                                    <img src="{{ asset('photos/produits/' . $photo[0]) }}" alt="{{$product->title}}" height="200px;">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">{{$product->price}} XOF</h3>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o empty"></i>
-                                    </div>
-                                    <h2 class="product-name"><a href="#">{{$product->title}}</a></h2>
-                                    <div class="qty-input">
-                                        <span class="text-uppercase">Quantité: </span>
-                                        <input class="input" type="number" value="1">
-                                    </div>
-                                    <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                        <a type="button" class="primary-btn add-to-cart"
-                                                data-id="{{ $product->id }}"
-                                                   data-name="{{ $product->title }}"
-                                                   data-price="{{ $product->price }}"><i class="fa fa-shopping-cart"></i>
-                                             Ajouter au panier</a>
+        
+                                    <div class="col-md-6">
+                                        {{-- <img alt="" class=""
+                                            src="
+                                            {{ asset('assets/website/img/about_us.jpg') }}"> --}}
                                     </div>
                                 </div>
                             </div>
+        
+                            <div class="col-12">
+                                <div class="card text-black mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nos valeurs</h4>
+                                        <p class="card-text">
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-12">
+                                <h4 class="card-title">Pourquoi choisir togodog ?</h4>
+                               
+        
+                            </div>
+                           
+        
                         </div>
-                        <!-- /Product Single -->
-
-                       
-
-                        <div class="clearfix visible-sm visible-xs"></div>
-
-                    </a>
-                    @endforeach
-                        
-
                     </div>
-                    <!-- /row -->
                 </div>
-                <!-- /STORE -->
 
                 <!-- store bottom filter -->
                 {{-- <div class="store-filter clearfix">
@@ -299,49 +238,7 @@
         <!-- /row -->
     </div>
     <!-- /container -->
-    <div class="default-social">
-        <!-- ShareThis BEGIN -->
-        <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-    </div>
 </div>
 <!-- /section -->
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
 
-        $(".primary-btn.add-to-cart").each(function(){
-
-            // const cart_data = $('[name="cart_data"]');
-
-            $(this).click(function(e){
-
-
-                e.preventDefault();
-
-                console.log('id : ',$(this).data('id'));
-                console.log('qty : ',$('.qty-input input').val() );
-
-                $.ajax({
-                    type:'get',
-                    url:'/put-in-cart',
-                    data: { id: $(this).data('id'), qty:$('.qty-input input').val() },
-                    success: (response)=>{
-
-                        console.log(response.cart_data);
-
-                        $('#cart-count').text(response.count)
-                        location.reload();
-                    },
-
-                    error: (error)=>{
-                        alert('probleme de conenxion');
-                        console.log(error);
-                    }
-                });
-            });
-        });
-    })
-</script>
 @endsection

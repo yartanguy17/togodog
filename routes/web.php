@@ -17,6 +17,8 @@ Route::get('/dashboard', function () {
   Route::controller('website\HomeController')->group(function() {
     Route::get('/', 'index')->name('home');
     Route::get('toilettage', 'toillettag')->name('toilettage');
+    Route::get('abut', 'abut')->name('abut');
+    Route::get('contact', 'contact')->name('contact');
     Route::post('add-toilettage', 'saveToillettag')->name('addtoilettage');
     Route::get('put-in-cart', 'putItemInSession')->name('put-in-cart');
   });
@@ -107,6 +109,12 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
 
     Route::get('video-upload', 'admin\VideosController@getVideoUploadForm')->name('get.video.upload');
     Route::post('video-upload', 'admin\VideosController@uploadVideo')->name('store.video');
+
+    // Video
+
+    Route::get('alimentation', 'admin\FoodController@index')->name('get.food');
+    Route::get('ajouter-alimentation', 'admin\FoodController@create')->name('create.food');
+    Route::post('alimentation', 'admin\FoodController@save')->name('store.food');
 
 //   });
 });

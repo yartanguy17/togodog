@@ -14,7 +14,7 @@ class BannerController extends Controller
   public function index()
   {
 
-    $banners = Banner::where('status', 'active')->orderBy('id', 'desc')->limit(4)->get();
+    $banners = Banner::where('status', 'active')->orderBy('id', 'desc')->limit(6)->get();
 
     // dd($banners);
 
@@ -90,7 +90,7 @@ class BannerController extends Controller
     $count = Banner::where('slug', $slug)->count();
     $data['photo'] = $request->file('photo');
 
-    // Il faudrait éventullement gérer la suppression de la précédente bannière s'il y'a eu mise à jour 
+    // Il faudrait éventullement gérer la suppression de la précédente bannière s'il y'a eu mise à jour
     // de l'image de celle-ci
     $filename = time() . '.' . $data['photo']->getClientOriginalExtension();
     $location = 'storage/banner';
@@ -101,7 +101,7 @@ class BannerController extends Controller
       $slug = $slug . '-' . date('ymdis') . '-' . rand(0, 999);
     }
     $data['slug'] = $slug;
-    
+
     $status = $banner->update($data);
 
     if ($status) {

@@ -31,6 +31,14 @@ class HomeController extends Controller
 
         return view('website.pages.toilettage');
     }
+    public function abut(){
+
+        return view('website.pages.abut');
+    }
+    public function contact(){
+
+        return view('website.pages.contact');
+    }
     public function saveToillettag(Request $request){
 
         $rules = [

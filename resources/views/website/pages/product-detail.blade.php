@@ -25,24 +25,19 @@
             <!--  Product Details -->
             <div class="product product-details clearfix">
                 <div class="col-md-6">
-                    {{-- <div id="product-main-view">
-                        <div class="product-view">
-                            <img src="./img/main-product01.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/main-product02.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/main-product03.jpg" alt="">
-                        </div>
-                        <div class="product-view">
-                            <img src="./img/main-product04.jpg" alt="">
-                        </div>
-                    </div> --}}
                     @php
-                        $photos=explode(";",$product->photo);
-                        // dd($photos);
-                    @endphp
+                    $photos=explode(";",$product->photo);
+                    // dd($photos);
+                @endphp
+
+                    <div id="product-main-view">
+                        @foreach ($photos as $photo)
+                        <div class="product-view">
+                            <img src="{{ asset('photos/produits/'.$photo) }}" alt="">
+                        </div>
+                        @endforeach
+                    </div>
+
                     <div id="product-view">
 
                             <div class="product-view">
@@ -96,7 +91,13 @@
                                 <span class="text-uppercase">QTY: </span>
                                 <input class="input" type="number" value="1">
                             </div>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            
+                                <a type="button" class="primary-btn add-to-cart"
+                                data-id="{{ $product->id }}"
+                                   data-name="{{ $product->title }}"
+                                   data-price="{{ $product->price }}">
+                                   <i class="fa fa-shopping-cart"></i> Ajouter au panier</a>
+                            
                             <div class="pull-right">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -266,9 +267,15 @@
                                 </div>
                                 <h2 class="product-name"><a href="#">{{$product->title}}</a></h2>
                                 <div class="product-btns">
+                                    <input class="input" type="number" value="1" hidden>
                                     <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                     <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
+                                     
+                                        <a type="button" class="primary-btn add-to-cart"
+                                                data-id="{{ $product->id }}"
+                                                   data-name="{{ $product->title }}"
+                                                   data-price="{{ $product->price }}"><i class="fa fa-shopping-cart"></i>
+                                             Ajouter au panier</a>
                                 </div>
                             </div>
                         </div>
@@ -281,38 +288,48 @@
         <!-- /row -->
     </div>
     <!-- /container -->
+    <div class="default-social">
+        <!-- ShareThis BEGIN -->
+        <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+    </div>
 </div>
 <!-- /section -->
-
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
 
-        $(".primary-btn").each(function(){
+        $(".primary-btn.add-to-cart").each(function(){
 
             // const cart_data = $('[name="cart_data"]');
 
-            // $(this).click(function(e){
+            $(this).click(function(e){
 
-            //     e.preventDefault();
 
-            //     $.ajax({
-            //         type:'get',
-            //         url:'/put-in-cart',
-            //         data: { id: $(this).data('id'), qty:1 },
-            //         success: (response)=>{
+                e.preventDefault();
 
-            //             console.log(response.cart_data);
+                console.log('id : ',$(this).data('id'));
+                console.log('qty : ',$('.qty-input input').val() );
 
-            //             $('#cart-count').text(response.count)
-            //             location.reload();
-            //         },
+                $.ajax({
+                    type:'get',
+                    url:'/put-in-cart',
+                    data: { id: $(this).data('id'), qty:$('.qty-input input').val() },
+                    success: (response)=>{
 
-            //         error: (error)=>{
-            //             alert('probleme de conenxion');
-            //             console.log(error);
-            //         }
-            //     });
-            // });
+                        console.log(response.cart_data);
+
+                        $('#cart-count').text(response.count)
+                        location.reload();
+                    },
+
+                    error: (error)=>{
+                        alert('probleme de conenxion');
+                        console.log(error);
+                    }
+                });
+            });
         });
     })
 </script>
